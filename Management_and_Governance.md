@@ -30,7 +30,7 @@
 
 ## AWS Trusted Advisor — Deep Dive
 
-### The 5 Pillars of Trusted Advisor
+### The 5 Pillars of Trusted Advisor - (FaT Security COp Performance ServiceLimits)
 
 | Pillar | What It Checks | Example Findings |
 |--------|---------------|-----------------|
