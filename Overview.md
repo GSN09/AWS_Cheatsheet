@@ -12,7 +12,7 @@
 | **AWS Pricing** | Pay-as-you-go consumption-based pricing model | Understand cost drivers and optimization levers | Budgeting, cost optimization, architecture decisions | Pay for what you use, save by committing, transfer costs matter |
 | **AWS Support Plans** | Tiered technical support and advisory services | Get help when you need it, at the right level | Project planning, operational readiness, choosing support tier | Higher tiers = faster response + dedicated guidance |
 
-## Six Pillars of the Well-Architected Framework
+## Six Pillars of the Well-Architected Framework (OpEx SecReCo PSus)
 
 | Pillar | Focus Area | Key Questions | Design Principles |
 |--------|-----------|---------------|-------------------|
