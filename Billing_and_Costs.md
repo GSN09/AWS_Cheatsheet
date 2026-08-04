@@ -215,8 +215,6 @@ CUSTOM billing    →  Billing Conductor ("Charge teams differently")
 
 | Question Pattern | Answer | Why People Get It Wrong |
 |-----------------|--------|------------------------|
-| "Which gives visibility into physical sockets?" | Dedicated Host | People confuse Dedicated Instance (no socket visibility) with Dedicated Host |
-| "Which is needed for BYOL?" | Dedicated Host | Dedicated Instance gives isolation but NOT core/socket mapping needed for licenses |
 | "What pools volume discounts across accounts?" | Consolidated Billing | People think it's a separate discount program — it's just billing aggregation |
 | "What alerts you *before* you overspend?" | AWS Budgets | People confuse with Cost Explorer (which only shows what already happened) |
 | "What gives raw line-item data for custom analysis?" | CUR | Cost Explorer is visual; CUR is the raw data behind it |
