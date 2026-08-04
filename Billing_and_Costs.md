@@ -29,19 +29,19 @@
 | Need to create custom billing views for internal teams | **AWS Billing Conductor** |
 | Need to estimate costs before building anything | **AWS Pricing Calculator** |
 
-## AWS Billing & EC2 Pricing — Quick Reference with Analogies
+## AWS Billing — Quick Reference with Analogies
 
 ### Billing & Cost Tools — Think of Running a Company
 
 | Service | Real-World Analogy | One-Liner | Example |
 |---------|-------------------|-----------|---------|
-| **Consolidated Billing** | One family phone plan for all family members | One bill for all AWS accounts under an Organization | Parent account pays for dev, staging, and prod accounts. Also pools usage for volume discounts (e.g., combined S3 usage hits a cheaper tier faster). |
-| **AWS Pricing Calculator** | A car configurator before you buy | "What will this cost?" estimator *before* you build | You're planning a 3-tier app. You plug in 2 ALBs, 4 EC2s, 1 RDS, and it tells you ~$1,200/month *before* you deploy anything. |
-| **Cost Allocation Tags** | Labels on boxes in a shared warehouse | Tag resources so you know *who* or *what* caused the cost | Tag every resource with `Team=DataEngineering` or `Project=Phoenix`. Now your CUR/Cost Explorer can show: "Data Engineering spent $8K last month." |
 | **AWS Cost Explorer** | Your bank's spending analytics dashboard | Look *backward* at what you spent, look *forward* with forecasts | "We spent 40% more on EC2 in June vs May — why?" Filter by tag, service, or account to find the answer. |
-| **AWS Billing Conductor** | A landlord splitting the electricity bill with custom rules | Create custom billing views with your own pricing logic for internal teams | You want to charge Team A at a 10% markup and give Team B a 5% discount as an internal shared service. Billing Conductor lets you create those custom rate cards. |
 | **AWS Budgets** | A spending alarm on your credit card | "Alert me (or *do something*) when I'm about to go over" | Set a $5,000/month budget. Get emailed at 80%. At 100%, auto-apply an SCP that blocks new EC2 launches. |
 | **AWS Cost and Usage Report (CUR)** | Your itemized credit card statement (every single line item) | Raw, granular data dump of *every* charge, delivered to S3 | You need to build a custom QuickSight dashboard showing cost-per-API-call per microservice. CUR gives you the 100+ column CSV/Parquet to do it. |
+| **Consolidated Billing** | One family phone plan for all family members | One bill for all AWS accounts under an Organization | Parent account pays for dev, staging, and prod accounts. Also pools usage for volume discounts (e.g., combined S3 usage hits a cheaper tier faster). |
+| **Cost Allocation Tags** | Labels on boxes in a shared warehouse | Tag resources so you know *who* or *what* caused the cost | Tag every resource with `Team=DataEngineering` or `Project=Phoenix`. Now your CUR/Cost Explorer can show: "Data Engineering spent $8K last month." |
+| **AWS Billing Conductor** | A landlord splitting the electricity bill with custom rules | Create custom billing views with your own pricing logic for internal teams | You want to charge Team A at a 10% markup and give Team B a 5% discount as an internal shared service. Billing Conductor lets you create those custom rate cards. |
+| **AWS Pricing Calculator** | A car configurator before you buy | "What will this cost?" estimator *before* you build | You're planning a 3-tier app. You plug in 2 ALBs, 4 EC2s, 1 RDS, and it tells you ~$1,200/month *before* you deploy anything. |
 
 #### Memory Trick — Think Chronologically
 
