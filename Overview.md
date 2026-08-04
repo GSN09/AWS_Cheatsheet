@@ -126,3 +126,6 @@
 | Production workloads, need 24/7 support | **Business** |
 | Business-critical workloads, want advisory support | **Enterprise On-Ramp** |
 | Mission-critical workloads, need dedicated TAM | **Enterprise** |
+
+### Shared Responsibility Model
+<img width="1148" height="720" alt="image" src="https://github.com/user-attachments/assets/93402356-cc1c-4fca-b97f-91b58ffdc959" />
