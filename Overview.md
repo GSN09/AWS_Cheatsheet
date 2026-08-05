@@ -34,6 +34,9 @@
 | **Security** | CISO, CCO, security teams | Achieve confidentiality, integrity, and availability | Security governance, security assurance, identity and access management, threat detection |
 | **Operations** | IT ops, SRE, infrastructure | Deliver cloud services at agreed-upon level | Observability, event management, incident management, change and release management |
 
+<img width="977" height="391" alt="image" src="https://github.com/user-attachments/assets/c9d7bf97-408a-427e-92c2-f29ece9d1efc" />
+
+
 ## AWS Design Principles
 
 | Principle | Description | Example |
