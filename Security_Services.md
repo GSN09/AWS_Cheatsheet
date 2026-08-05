@@ -117,3 +117,24 @@
 | **AWS Shield** | Standard: free / Advanced: $3,000/mo | Free–$$$$ | Advanced includes WAF credits + DRT |
 | **AWS Network Firewall** | Per endpoint-hour + per GB | $$$ | ~$0.395/hr per endpoint |
 | **AWS Firewall Manager** | Per policy per region | $$ | $100/policy/region/month |
+
+Note: 
+security assessments or penetration tests against their AWS infrastructure without prior approval to a few services only.
+Permitted Services – You’re welcome to conduct security assessments against AWS resources that you own if they make use of the services listed below. Take note that AWS is constantly updating this list:
+
+ – Amazon EC2 instances, NAT Gateways, and Elastic Load Balancers
+ – Amazon RDS
+ – Amazon CloudFront
+ – Amazon Aurora
+ – Amazon API Gateways
+ – AWS Lambda and Lambda Edge functions
+ – Amazon Lightsail resources
+ – Amazon Elastic Beanstalk environments
+
+Prohibited Activities – The following activities are prohibited at this time:
+
+ – DNS zone walking via Amazon Route 53 Hosted Zones
+ – Denial of Service (DoS), Distributed Denial of Service (DDoS), Simulated DoS, Simulated DDoS
+ – Port flooding
+ – Protocol flooding
+ – Request flooding (login request flooding, API request flooding)
