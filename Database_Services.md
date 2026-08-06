@@ -15,6 +15,68 @@
 | **Amazon Redshift** | Petabyte-scale data warehousing | Columnar (OLAP) | Tables, SQL, columnar storage | Up to 2 PB+, concurrency scaling | BI/reporting, large-scale analytics, historical data analysis, ETL targets |
 | **Amazon Redshift Serverless** | On-demand data warehousing without cluster management | Columnar (OLAP) | Tables, SQL, columnar storage | Auto-scales compute, pay-per-query | Ad-hoc analytics, variable workloads, dev/test warehouses, infrequent reporting |
 
+## Capabilities Matrix (Checkmark Grid)
+
+| Service | Self-Healing Storage | High Throughput | Sub-ms Latency | Serverless | Auto-Scaling | Multi-AZ HA | Read Replicas | Global / Multi-Region | IOPS Heavy | Immutable / Ledger | In-Memory | Change Streams / CDC | PITR | Managed Patching | Connection Pooling | MPP / Columnar |
+|---------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Amazon Aurora** | ✅ | ✅ (5x MySQL) | — | ✅ (Serverless v2) | ✅ (storage + compute) | ✅ (6-way replication) | ✅ (up to 15) | ✅ (Global Database) | ✅ | — | — | — | ✅ (Backtrack + restore) | ✅ | ✅ (RDS Proxy) | — |
+| **Amazon RDS** | — | — | — | — | ✅ (storage only) | ✅ (synchronous standby) | ✅ (up to 15) | ✅ (cross-region read replicas) | ✅ (Provisioned IOPS) | — | — | — | ✅ | ✅ | ✅ (RDS Proxy) | — |
+| **Amazon DynamoDB** | ✅ (auto-partitioning) | ✅ (millions req/sec) | ✅ (single-digit ms) | ✅ (default) | ✅ (on-demand or auto) | ✅ (built-in) | — (inherent) | ✅ (Global Tables) | — | — | ✅ (DAX cache layer) | ✅ (DynamoDB Streams) | ✅ | ✅ (fully managed) | — | — |
+| **Amazon DocumentDB** | ✅ (6-way replication) | — | — | ✅ (Elastic Clusters) | ✅ (storage) | ✅ | ✅ (up to 15) | — | — | — | — | ✅ (Change Streams) | ✅ | ✅ | — | — |
+| **Amazon ElastiCache** | — | ✅ | ✅ (sub-ms) | ✅ (Serverless) | ✅ (online resharding) | ✅ (Redis Multi-AZ) | ✅ (Redis replicas) | — | — | — | ✅ (pure in-memory) | — | — | ✅ | — | — |
+| **Amazon MemoryDB** | ✅ (transaction log) | ✅ | ✅ (microsecond reads) | — | ✅ (add/remove shards) | ✅ (built-in, durable) | ✅ | — | — | — | ✅ (in-memory + durable) | — | — | ✅ | — | — |
+| **Amazon Neptune** | ✅ (6-way replication) | ✅ (billions of edges) | — | ✅ (Serverless) | ✅ (storage) | ✅ | ✅ (up to 15) | ✅ (Global Database) | — | — | — | ✅ (Neptune Streams) | ✅ | ✅ | — | — |
+| **Amazon QLDB** | — | — | — | ✅ (fully serverless) | ✅ (automatic) | ✅ (built-in) | — | — | — | ✅ (cryptographic hash chain) | — | ✅ (QLDB Streams) | — (journal is immutable) | ✅ (fully managed) | — | — |
+| **Amazon Redshift** | — | ✅ (petabyte analytics) | — | — | ✅ (concurrency scaling) | ✅ | — | — | — | — | — | — | ✅ (snapshots) | ✅ | — | ✅ (MPP + columnar) |
+| **Redshift Serverless** | — | ✅ (petabyte analytics) | — | ✅ (default) | ✅ (auto RPU scaling) | ✅ | — | — | — | — | — | — | ✅ (snapshots) | ✅ (fully managed) | — | ✅ (MPP + columnar) |
+
+### How to Read This Table
+
+- **✅** = Core capability of this service
+- **—** = Not applicable or not a differentiator
+- Parenthetical notes explain *how* the capability works for that service
+
+### Capability Definitions
+
+| Capability | What It Means |
+|-----------|---------------|
+| **Self-Healing Storage** | Automatically detects and repairs disk/data corruption without downtime |
+| **High Throughput** | Designed for very high request rates or large-scale data processing |
+| **Sub-ms Latency** | Consistently delivers sub-millisecond or microsecond response times |
+| **Serverless** | No infrastructure to manage; scales to zero, pay-per-use |
+| **Auto-Scaling** | Automatically adjusts compute or storage without manual intervention |
+| **Multi-AZ HA** | Replicates across Availability Zones for high availability |
+| **Read Replicas** | Offload reads to replica instances for horizontal read scaling |
+| **Global / Multi-Region** | Replicate or serve data across AWS Regions |
+| **IOPS Heavy** | Optimized for high I/O operations per second (transactional workloads) |
+| **Immutable / Ledger** | Data cannot be modified or deleted; cryptographically verifiable |
+| **In-Memory** | Data stored primarily in RAM for extreme speed |
+| **Change Streams / CDC** | Captures changes (inserts, updates, deletes) as a stream for downstream processing |
+| **PITR** | Point-in-Time Recovery — restore to any second within retention window |
+| **Managed Patching** | AWS handles OS and engine patching automatically |
+| **Connection Pooling** | Built-in or integrated connection management to handle thousands of connections |
+| **MPP / Columnar** | Massively Parallel Processing with column-oriented storage for analytics |
+
+### Capability Quick-Match (Exam Keyword → Service)
+
+| When You Hear... | Think... |
+|-----------------|----------|
+| "Self-healing storage" | **Aurora** |
+| "5x MySQL performance" | **Aurora** |
+| "Backtrack / rewind the database" | **Aurora** |
+| "Single-digit millisecond at any scale" | **DynamoDB** |
+| "Global tables / multi-region active-active" | **DynamoDB** |
+| "DAX cache" | **DynamoDB** |
+| "Sub-millisecond caching" | **ElastiCache** |
+| "Redis with durability / won't lose data" | **MemoryDB** |
+| "Graph / relationships / traversals" | **Neptune** |
+| "Immutable / ledger / cryptographic verification" | **QLDB** |
+| "Massively parallel / petabyte analytics" | **Redshift** |
+| "Query S3 data in place (Spectrum)" | **Redshift** |
+| "MongoDB compatible" | **DocumentDB** |
+| "6 database engines, managed" | **RDS** |
+| "Pay-per-query data warehouse" | **Redshift Serverless** |
+
 ## Decision Criteria
 
 | Decision Factor | Recommended Service |
